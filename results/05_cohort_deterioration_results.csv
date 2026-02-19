@@ -1,0 +1,4 @@
+cohort_month,new_customers,pct_direct,pct_search,pct_unattributed,pct_internal,pct_other,pct_platinum,pct_gold,pct_silver,pct_bronze,avg_ltv,avg_total_orders,repeat_purchase_rate,pct_one_time_customers,avg_order_value,avg_days_to_second_purchase,pct_users_within_7days,pct_users_within_30_days
+1,772,0.21,0.31,0.11,0.14,0.22,0.08,0.2,0.31,0.41,0.0001,1.44,0.16,0.94,0.0001,1.4920634920634923,0.90476190476190477,1.0
+11,1481,0.23,0.28,0.14,0.12,0.24,0.24,0.24,0.26,0.26,0.0001,2.11,0.73,0.71,0.0001,3.8967441860465111,0.85116279069767442,0.96558139534883725
+12,1813,0.22,0.29,0.16,0.12,0.22,0.16,0.21,0.28,0.35,0.0001,1.9,0.38,0.86,0.0001,3.7112068965517233,0.8635057471264368,0.95258620689655171

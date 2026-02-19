@@ -1,0 +1,4 @@
+cohort_month,new_customers,avg_ltv,avg_order_value,avg_total_orders,repeat_purchase_rate,pct_one_time_buyers,pct_platinum,pct_gold,pct_silver,pct_bronze,pct_direct,pct_search,pct_unattributed,pct_internal,pct_other
+1,772,0.0001,0.0001,1.1,0.06,0.94,0.05,0.19,0.32,0.44,0.21,0.32,0.12,0.12,0.24
+11,1481,0.0001,0.0001,1.44,0.29,0.71,0.14,0.22,0.3,0.34,0.22,0.28,0.14,0.12,0.24
+12,1813,0.0001,0.0001,1.25,0.14,0.86,0.09,0.19,0.3,0.42,0.22,0.3,0.14,0.12,0.22
