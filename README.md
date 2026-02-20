@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Dashboard Cover: Key Cohort Metrics
+## 🚀 Key Cohort Metrics
 
 | KPI | Metric Description | Badge |
 |-----|--------|-------|
@@ -70,3 +70,141 @@ Because monetary metrics are obfuscated, **customer value must be inferred using
 ## Analytical Framework
 
 All analyses follow a **repeatable product analytics workflow**:
+
+Lifecycle Stage
+↓
+Primary Business Risk
+↓
+Metric Family
+↓
+Metric Table Schema
+↓
+SQL Modeling
+↓
+Decision Interpretation
+
+
+**Lifecycle focus:** Customer Lifecycle Stage → **Acquisition Economics**
+
+---
+
+## Data Modeling
+
+A **customer-level analytical layer** (`customer360`) was constructed from event data.  
+
+**Customer Grain:** One row per customer  
+
+**Core Fields:**
+
+| Column | Description |
+|--------|-------------|
+| `customerId` | Unique user identifier |
+| `cohort_date` | Month of first purchase (use truncated timestamp) |
+| `channel_group` | First acquisition channel |
+| `total_orders` | Lifetime purchase count |
+| `avg_order_value` | Mean order value proxy |
+| `value_tier` | Behavioral customer tier |
+
+**Metric Definition: Behavioral Customer Value**  
+
+Because revenue is obfuscated, customer value is defined using **engagement and purchasing behavior**.
+
+**Value Indicators:**
+
+- `avg_orders_per_customer`  
+- `repeat_purchase_rate`  
+- `pct_one_time_buyers`  
+- `value tier distribution`  
+- `time to second purchase`  
+
+**High-value customers** are those who:
+
+- Purchase again  
+- Purchase quickly  
+- Exhibit higher order frequency  
+
+---
+
+## Analysis 1 — Acquisition Channel Quality
+
+**Business Question:** Which channels bring **high-value customers**?  
+
+**Metrics:**
+
+- Customers acquired  
+- `avg_orders_per_customer`  
+- `repeat_purchase_rate`  
+- Value tier distribution  
+- `pct_one_time_buyers`  
+
+**Key Finding:**  
+Channel performance differences were minimal.
+
+**Implication:**  
+Acquisition source was **not the primary driver** of customer quality decline.
+
+**Visualization:**  
+![Analysis 1 - Acquisition Channel Quality](./visuals/01_Channel_Quality_trend.png)
+
+---
+
+## Analysis 2 — Cohort Evolution
+
+**Business Question:** How do **customer characteristics change over time**?  
+
+Customers were grouped by **first purchase month**.
+
+**Metrics Examined:**
+
+- Repeat purchase rate  
+- Average order frequency  
+- Value tier migration  
+- Acquisition mix stability  
+
+**Finding:**  
+Later cohorts demonstrated:
+
+- Higher one-time buyer share  
+- Lower repeat behavior  
+- Reduced engagement depth  
+
+Customer quality **degraded progressively** after acquisition.
+
+**Visualization:**  
+![Analysis 2 - Cohort Evolution](./visualizations/cohort_evolution.png)
+
+---
+
+## Analysis 3 — Cohort Deterioration Diagnosis
+
+**Business Question:** Why are cohorts deteriorating despite **stable acquisition strategy**?  
+
+**Diagnostic Dimensions:**
+
+- **Acquisition Stability:** Channel mix remained largely constant  
+- **Behavioral Change:** Time to second purchase increased, repeat purchase probability declined  
+- **Activation Failure:** Customers increasingly failed to transition beyond first purchase  
+
+**Core Insight:**  
+The business problem is **not acquisition efficiency** — it is an **early lifecycle activation breakdown**. Marketing optimization alone would **not solve performance decline**.
+
+**Visualization:**  
+![Analysis 3 - Cohort Deterioration Diagnosis](./visualizations/cohort_deterioration.png)
+
+---
+
+## Key Takeaways
+
+- Behavioral metrics are essential when revenue is obfuscated  
+- Cohort analysis reveals early activation failures that traditional channel KPIs cannot detect  
+- Structured, repeatable workflows enable rapid diagnosis of customer quality issues  
+- Visualizations should track **metrics across time**, not just across channels  
+
+---
+
+## How to Run This Analysis
+
+1. Clone the repository:  
+
+```bash
+git clone https://github.com/Craphtr/Ecommerce-Customer-Acquisition-Cohort-Quality-Analysis-Bigquery.git
