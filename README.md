@@ -8,12 +8,12 @@
 
 | KPI | Metric Description | Badge |
 |-----|--------|-------|
-| 📊 Average days to 2nd purchase | Measures activation speed — how quickly new customers become repeat buyers after first purchase. Lower = healthier onboarding and engagement. | ![Days to 2nd purchase](https://img.shields.io/badge/Avg%20days%20to%202nd%20purchase-3.03%25-blue) |
-| 🔄 Repeat Purchase Rate | Percentage of customers who purchase more than once. Primary indicator of early retention and cohort health. | ![Repeat Purchase Rate](https://img.shields.io/badge/Repeat%20Purchase%20Rate-42%25-green) |
-| 🏆 Percentage of One-time Buyers |  | ![Percentage of One-time Buyers](https://img.shields.io/badge/Percentage%20of%20One%20buyers-83.7%25-lightgrey) |
-| 🥇 Users Activated Within 7 days | Portion of customers making a second purchase within one week — measures strong early engagement momentum. | ![Percentage of Users within 7 days](https://img.shields.io/badge/Users%20Activated%20within%207%20days-87%25-yellow) |
-| ⚪ Users Activated Within 30 days | Coverage of successful activation window; shows whether customers eventually convert even if not immediately | ![Percentage of Users within 30 days](https://img.shields.io/badge/Users%20Activated%20Within%2030%20days-97%25-silver) |
-| 🟤 High-Value Customer Share | Percentage of customers reaching high behavioral value tiers based on purchase frequency and engagement. Indicates cohort quality | ![Value Tiers](https://img.shields.io/badge/Bronze-25%25-brown) |
+| 📊 Average days to 2nd purchase | Measures activation speed — how quickly new customers become repeat buyers after first purchase. Lower = healthier onboarding and engagement. | ![Days to 2nd purchase](https://img.shields.io/badge/Days%20to%202nd%20purchase-3.03%25-blue) |
+| 🔄 Repeat Purchase Rate | Percentage of customers who purchase more than once. Primary indicator of early retention and cohort health. | ![Repeat Purchase Rate](https://img.shields.io/badge/Repeat%20Rate-42%25-green) |
+| 🏆 Percentage of One-time Buyers | Share of customers who never return after first purchase. Direct signal of activation failure and revenue leakage. | ![One-time Buyers](https://img.shields.io/badge/One%20buyers-83.7%25-lightgrey) |
+| 🥇 Users Activated Within 7 days | Portion of customers making a second purchase within one week — measures strong early engagement momentum. | ![Users within 7 days](https://img.shields.io/badge/Within%207%20days-87%25-yellow) |
+| ⚪ Users Activated Within 30 days | Coverage of successful activation window; shows whether customers eventually convert even if not immediately | ![Users within 30 days](https://img.shields.io/badge/Within%2030%20days-97%25-silver) |
+| 🟤 High-Value Customer Share | Percentage of customers reaching high behavioral value tiers based on purchase frequency and engagement. Indicates cohort quality | ![High-Value Tiers](https://img.shields.io/badge/Platinum%20Gold-30.3%25-brown) |
 
 > 💡 Tip: Replace the badge numbers with your **actual calculated cohort metrics**.
 
