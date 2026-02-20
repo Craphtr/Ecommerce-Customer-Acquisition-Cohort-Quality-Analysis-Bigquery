@@ -9,6 +9,8 @@ CREATE OR REPLACE TABLE ga_dataset.ga4_customer360_Master as
 with raw_customer360 as (
   select
     customerId,
+    date_trunc(date(first_order_date), month) as cohort_date,
+    extract (year from first_order_date) as cohort_year,
     extract (month from first_order_date) as cohort_month,
     first_order_date,
     last_order_date,
@@ -83,6 +85,7 @@ final_processing as (
 --============================================================================
 select
   customerId,
+  cohort_date,
   cohort_month,
   first_order_date,
   last_order_date,

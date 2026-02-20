@@ -22,7 +22,7 @@ with purchases as (
 customer_base as (
   select
     cm.customerId,
-    cm.cohort_month,
+    cm.cohort_date,
     cm.channel_group,
     cm.total_revenue,
     cm.total_orders,
@@ -37,7 +37,7 @@ customer_base as (
 ranked_purchases as (
   select 
     customerId,
-    cohort_month,
+    cohort_date,
     channel_group,
     total_revenue,
     total_orders,
@@ -62,7 +62,7 @@ purchase_pairs as (
 user_latency as (
   select
     cb.customerId,
-    cb.cohort_month,
+    cb.cohort_date,
     cb.channel_group,
     cb.value_tier,
     cb.total_revenue,
@@ -77,41 +77,41 @@ user_latency as (
 ---------------------------------
 cohort_size as (
   select 
-    cohort_month,
+    cohort_date,
     count(distinct customerId) as new_customers
   from customer_base
-  group by cohort_month
+  group by cohort_date
 ),
 -- Define Acquisition Mix
 ---------------------------------
 cohort_acquisition_mix as (
   select
-    cohort_month,
+    cohort_date,
     round(avg(case when channel_group = 'Direct' then 1 else 0 end),2) as pct_direct,
     round(avg(case when channel_group like '%Search%' then 1 else 0 end),2) as pct_search,
     round(avg(case when channel_group like '%Unattributed%' then 1 else 0 end), 2) as pct_unattributed,
     round(avg(case when channel_group like '%Internal%' then 1 else 0 end),2) as pct_internal,
     round(avg(case when channel_group like '%Other%' then 1 else 0 end),2) as pct_other
   from customer_base
-  group by cohort_month
+  group by cohort_date
 ),
 -- Define Value_tier composition
 ----------------------------------
 cohort_tier as (
   select
-    cohort_month,
+    cohort_date,
     round(avg(case when value_tier = 'Platinum' then 1 else 0 end),2) as pct_platinum,
     round(avg(case when value_tier = 'Gold' then 1 else 0 end), 2) as pct_gold,
     round(avg(case when value_tier = 'Silver' then 1 else 0 end),2) as pct_silver,
     round(avg(case when value_tier = 'Bronze' then 1 else 0 end),2) as pct_bronze
   from customer_base
-  group by cohort_month
+  group by cohort_date
 ),
 -- Define Economic Quality & Behavioral Depth
 -----------------------------------------------
 cohort_econs_behaviour as (
   select
-    cohort_month,
+    cohort_date,
     --Economics
     round(avg(total_revenue),4) as avg_ltv,
     --Behaviour
@@ -119,23 +119,23 @@ cohort_econs_behaviour as (
     round(count(case when total_orders > 1 then customerId end)/count(distinct customerId),2) as repeat_purchase_rate,
     round(count(case when total_orders = 1 then customerId end)/count(distinct customerId),2) as pct_one_time_customers
   from customer_base
-  group by cohort_month
+  group by cohort_date
 ),
 -- Define Engagement Efficiency Metrics
 ------------------------------------------------
 cohort_engagement as (
   select
-    cohort_month,
+    cohort_date,
     round(avg(avg_order_value),4) as avg_order_value,
     avg(days_to_second_purchase) as avg_days_to_second_purchase,
     safe_divide(countif(days_to_second_purchase <= 7), count(days_to_second_purchase)) as pct_users_within_7days,
     safe_divide(countif(days_to_second_purchase <= 30), count(days_to_second_purchase)) as pct_users_within_30_days
   from user_latency
   where days_to_second_purchase is not null
-  group by cohort_month
+  group by cohort_date
 )
 select
-  cs.cohort_month,
+  cs.cohort_date,
   cs.new_customers,
   cam.pct_direct,
   cam.pct_search,
@@ -155,8 +155,8 @@ select
   ce.pct_users_within_7days,
   ce.pct_users_within_30_days
 from cohort_size cs
-join cohort_acquisition_mix cam using (cohort_month)
-join cohort_tier ct using(cohort_month)
-join cohort_econs_behaviour ceb using(cohort_month)
-join cohort_engagement ce using(cohort_month)
-order by cohort_month
+join cohort_acquisition_mix cam using (cohort_date)
+join cohort_tier ct using(cohort_date)
+join cohort_econs_behaviour ceb using(cohort_date)
+join cohort_engagement ce using(cohort_date)
+order by cohort_date
