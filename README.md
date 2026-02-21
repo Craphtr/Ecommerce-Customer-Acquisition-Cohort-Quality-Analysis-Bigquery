@@ -8,14 +8,13 @@
 
 | KPI | Metric Description | Badge |
 |-----|--------|-------|
-| 📊 Average days to 2nd purchase | Measures activation speed — how quickly new customers become repeat buyers after first purchase. Lower = healthier onboarding and engagement. | ![Days to 2nd purchase](https://img.shields.io/badge/Days%20to%202nd%20purchase-3.03%25-blue) |
+| 📊 Average days to 2nd purchase | Measures activation speed — how quickly new customers become repeat buyers after first purchase. Lower = healthier onboarding and engagement. | ![Days to 2nd purchase](https://img.shields.io/badge/Days%20to%202nd%20buy-3.03%25-blue) |
 | 🔄 Repeat Purchase Rate | Percentage of customers who purchase more than once. Primary indicator of early retention and cohort health. | ![Repeat Purchase Rate](https://img.shields.io/badge/Repeat%20Rate-42%25-green) |
 | 🏆 Percentage of One-time Buyers | Share of customers who never return after first purchase. Direct signal of activation failure and revenue leakage. | ![One-time Buyers](https://img.shields.io/badge/One%20buyers-83.7%25-lightgrey) |
 | 🥇 Users Activated Within 7 days | Portion of customers making a second purchase within one week — measures strong early engagement momentum. | ![Users within 7 days](https://img.shields.io/badge/Within%207%20days-87%25-yellow) |
 | ⚪ Users Activated Within 30 days | Coverage of successful activation window; shows whether customers eventually convert even if not immediately | ![Users within 30 days](https://img.shields.io/badge/Within%2030%20days-97%25-silver) |
 | 🟤 High-Value Customer Share | Percentage of customers reaching high behavioral value tiers based on purchase frequency and engagement. Indicates cohort quality | ![High-Value Tiers](https://img.shields.io/badge/Platinum%20Gold-30.3%25-brown) |
 
-> 💡 Tip: Replace the badge numbers with your **actual calculated cohort metrics**.
 
 ---
 
@@ -71,17 +70,12 @@ Because monetary metrics are obfuscated, **customer value must be inferred using
 
 All analyses follow a **repeatable product analytics workflow**:
 
-Lifecycle Stage
-↓
-Primary Business Risk
-↓
-Metric Family
-↓
-Metric Table Schema
-↓
-SQL Modeling
-↓
-Decision Interpretation
+Customer Lifecycle Stage  
+⬇️ Primary Business Risk  
+⬇️ Metric Family  
+⬇️ Metric Table Schema  
+⬇️ SQL Modeling  
+⬇️ Decision Interpretation
 
 
 **Lifecycle focus:** Customer Lifecycle Stage → **Acquisition Economics**
@@ -99,7 +93,7 @@ A **customer-level analytical layer** (`customer360`) was constructed from event
 | Column | Description |
 |--------|-------------|
 | `customerId` | Unique user identifier |
-| `cohort_date` | Month of first purchase (use truncated timestamp) |
+| `cohort_date` | Month of first purchase |
 | `channel_group` | First acquisition channel |
 | `total_orders` | Lifetime purchase count |
 | `avg_order_value` | Mean order value proxy |
@@ -131,17 +125,23 @@ Because revenue is obfuscated, customer value is defined using **engagement and 
 
 **Metrics:**
 
-- Customers acquired  
-- `avg_orders_per_customer`  
-- `repeat_purchase_rate`  
-- Value tier distribution  
-- `pct_one_time_buyers`  
+ 📊 **Acquisition Quality KPI Summary**
+
+| KPI | Value | Badge |
+|-----|-------|-------|
+| 📊 Avg Orders per Customer | 1.30 | ![Avg Orders](https://img.shields.io/badge/Avg%20Orders-1.30-blue) |
+| 🔄 Repeat Purchase Rate | 18% | ![Repeat Rate](https://img.shields.io/badge/Repeat%20Rate-18%25-green) |
+| 🚫 One-Time Buyers | 82% | ![One Time Buyers](https://img.shields.io/badge/One--Time%20Buyers-82%25-red) |
+| 🏆 Platinum Customers | 10–13% | ![Platinum](https://img.shields.io/badge/Platinum%20Share-~12%25-lightgrey) |
+| 👥 Customers Acquired | 4,066 | ![Customers](https://img.shields.io/badge/Customers-4066-purple) | 
 
 **Key Finding:**  
-Channel performance differences were minimal.
+- Engagement is shallow coupled with a weak retention. 
+- Activation Failure is high with the dominant behavioral pattern being one-time purchasing.
+- Channel performance differences exist — but they are small relative to the structural issue.
 
 **Implication:**  
-Acquisition source was **not the primary driver** of customer quality decline.
+Customer acquisition quality is broadly similar across channels, with minor behavioral advantages in Internal and Direct traffic. However, across all channels, approximately 80% of customers purchase only once, indicating that retention—not acquisition mix—is the primary performance constraint. Strategic focus should shift toward post-purchase engagement rather than channel reallocation.
 
 **Visualization:**  
 ![Analysis 1 - Acquisition Channel Quality](./visuals/01_Channel_Quality_trend.png)
@@ -208,3 +208,11 @@ The business problem is **not acquisition efficiency** — it is an **early life
 
 ```bash
 git clone https://github.com/Craphtr/Ecommerce-Customer-Acquisition-Cohort-Quality-Analysis-Bigquery.git
+
+2. Open BigQuery and link the GA4 sample dataset.
+
+3. Run the SQL scripts in sql/ folder to create customer360 layer and cohort tables.
+
+4. Update visualization placeholders in visualizations/ folder.
+
+5. Open README.md in GitHub to see fully rendered results.
