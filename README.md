@@ -163,21 +163,20 @@ Customers are considered high-value if they:
 
 ---
 
-## Analysis 1 — Acquisition Channel Quality
+# Analysis Step 1 — Testing Acquisition Channel Quality
 
 ---
 
-## 🧭 Investigation Progress
-
-**Customer Quality Decline Investigation**
+### 🧭 Investigation Progress
 
 `[ STEP 1: Acquisition Quality ] → Cohort Evolution → Lifecycle Diagnosis → Root Cause`
 
-**Current Objective:** Test whether acquisition channels explain declining customer quality.
+Customer quality is declining despite stable acquisition strategy.
+**First Hypothesis:** Some acquisition channels may be brining lower quality customers. If true, reallocating marketing spend could solve performance decline.
 
 --- 
 
- 📊 **Acquisition Quality KPI Summary**
+ ### 📊 **Acquisition Quality KPI Summary**
 
 | KPI | Value | Badge |
 |-----|-------|-------|
@@ -189,28 +188,30 @@ Customers are considered high-value if they:
 
 ### Key Results — Acquisition Channel Quality
 
-| Channel Group | Customers | Avg Orders | Repeat Rate | Platinum % | One-Time Buyers % |
-|---------------|-----------|------------|-------------|------------|------------------|
-| Internal / Self Referral | 485 | 1.32 | 0.20 | 0.13 | 0.80 |
-| Unattributed (Consent Loss) | 551 | 1.34 | 0.19 | 0.10 | 0.81 |
-| Direct | 891 | 1.29 | 0.19 | 0.10 | 0.81 |
-| Other / Unknown | 925 | 1.30 | 0.16 | 0.10 | 0.84 |
-| Search (Paid/Organic) | 1214 | 1.25 | 0.16 | 0.09 | 0.84 |
+| Channel Group | Customers | Avg Orders | Repeat Rate | Platinum % | Gold % | One-Time Buyers % |
+|---------------|-----------|------------|-------------|------------|--------|------------------|
+| Internal / Self Referral | 485 | 1.32 | 0.20 | 13% | 21% | 80% |
+| Unattributed (Consent Loss) | 551 | 1.34 | 0.19 | 10% | 21% | 81% |
+| Direct | 891 | 1.29 | 0.19 | 10% | 29% | 81% |
+| Other / Unknown | 925 | 1.30 | 0.16 | 10% | 18% | 84% |
+| Search (Paid/Organic) | 1214 | 1.25 | 0.16 | 9% | 21% | 84% |
 
-**Key Finding:**  
-- Engagement is shallow coupled with a weak retention. 
-- Activation Failure is high with the dominant behavioral pattern being one-time purchasing.
-- Channel performance differences exist — but they are small relative to the structural issue.
+### **Key Insights***
 
-**Implication:**  
+- Engagement depth is uniformly shallow across channels.
+- Repeat purchasing remains consistently low.
+- Approximately 80% of customers purchase only once, regardless of acquisition source.
+- Channel differences exist but are marginal relative to overall behavioral patterns.
+
+### **Decision Interpretation:**  
 The quality of customers is broadly similar across all channels, with minor behavioral advantages in Internal and Direct traffic. However, across all channels, approximately 80% of customers purchase only once, indicating that retention—not acquisition mix—is the primary performance constraint. Strategic focus should shift toward post-purchase engagement rather than channel reallocation.
 
-**Visualization:**  
+### **Visualization:**  
 ![Analysis 1 - Acquisition Channel Quality](./visuals/01_Channel_Quality_trend.png)
 
 
-**Hypothesis Status:** ❌ Acquisition channels are NOT the primary driver.
----
+### **Hypothesis Status:** ❌ Acquisition channels are NOT the primary driver of declining Customer Quality.
+
 ---
 
 ## Analysis 2 — Cohort Evolution
