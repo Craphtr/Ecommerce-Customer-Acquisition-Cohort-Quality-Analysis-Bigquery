@@ -1,4 +1,4 @@
-# 🟠 # Diagnosing Cohort Quality Decline in Ecommerce — Behavioral Case Study (BigQuery)
+# 🟠 Diagnosing Cohort Quality Decline in Ecommerce — Behavioral Case Study (BigQuery)
 
 **Addressing the common problem of deteriorating Cohort Quality faced by Ecommerce Companies**
 
@@ -41,6 +41,7 @@ Customer acquisition volume remains stable, yet overall customer quality appears
 | 🏆 High-Value Customers | Small minority | ![Platinum](https://img.shields.io/badge/Platinum%20Share-~12%25-lightgrey) |
 
 
+
 ### 🎯 Final Diagnosis
 
 Customer quality decline is **not caused by acquisition channel performance**.
@@ -48,6 +49,7 @@ Customer quality decline is **not caused by acquisition channel performance**.
 The primary failure occurs **after acquisition**, where customers increasingly fail to transition beyond their first purchase.
 
 **Root Cause:** Early lifecycle activation breakdown.
+
 
 
 ### 💼 Business Implication
@@ -78,7 +80,8 @@ This project investigates **customer acquisition effectiveness** and the **deter
 
 Because revenue is obfuscated in the GA4 sample data, customer value is assessed using a **behavioral definition**, focusing on engagement and purchase patterns.  
 
-**###Objective:** Investigate and address the common problem of **deteriorating cohort quality**, by understanding behavioral and engagement patterns that drive customer value post-acquisition.  
+### **Objective:** 
+Investigate and address the common problem of **deteriorating cohort quality**, by understanding behavioral and engagement patterns that drive customer value post-acquisition.  
 
 The analysis follows a **sequential diagnostic approach**:
 
@@ -94,14 +97,14 @@ This workflow demonstrates how structured analytics can **isolate the true drive
 
 **Source:** [Google Analytics 4 Obfuscated Ecommerce Dataset (BigQuery Public Data)](https://console.cloud.google.com/marketplace/details/bigquery-public-data/ga4-obfuscated)  
 
-**###Characteristics:**
+### **Characteristics:**
 - Event-level ecommerce tracking  
 - 3 months of observable acquisition cohorts  
 - Revenue values anonymized (near zero)  
 - Partial channel attribution  
 - No explicit CAC data  
 
-**###Analytical Constraint:**  
+### **Analytical Constraint:**  
 Because monetary metrics are obfuscated, **customer value must be inferred using behavioral proxies**, mirroring real industry scenarios involving **privacy loss and incomplete attribution**.
 
 
@@ -114,7 +117,8 @@ Customer Lifecycle Stage
 ⬇️ SQL Modeling  
 ⬇️ Decision Interpretation
 
-**Lifecycle Focus:** Customer Lifecycle Stage → Acquisition Economics  
+### **Lifecycle Focus:** 
+Customer Lifecycle Stage → Acquisition Economics  
 **Note: Because revenue metrics are obfuscated, acquisition economics are inferred using behavioral proxies such as repeat purchase rate, average orders, and value tier distribution.**
 
 ---
