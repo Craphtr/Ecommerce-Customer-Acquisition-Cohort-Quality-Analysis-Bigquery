@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Key Cohort Metrics
+### 🚀 Key Cohort Metrics
 
 | KPI | Metric Description | Badge |
 |-----|--------|-------|
@@ -16,15 +16,14 @@
 | 🟤 High-Value Customer Share | Percentage of customers reaching high behavioral value tiers based on purchase frequency and engagement. Indicates cohort quality | ![High-Value Tiers](https://img.shields.io/badge/Platinum%20Gold-30.3%25-brown) |
 
 ---
+---
 
 # 🧠 Executive Summary — Customer Acquisition Investigation
 
 ### Business Problem
 Customer acquisition volume remains stable, yet overall customer quality appears to decline over time.
 
----
-
-## 🔎 Investigation Path
+### 🔎 Investigation Path
 
 | Investigation Step | Question Tested | Outcome |
 |-------------------|-----------------|---------|
@@ -32,9 +31,8 @@ Customer acquisition volume remains stable, yet overall customer quality appears
 | **2️⃣ Cohort Evolution** | Do newer customers behave differently over time? | ✅ Newer cohorts show weaker engagement |
 | **3️⃣ Lifecycle Diagnosis** | What behavioral mechanism explains deterioration? | ✅ Customers increasingly fail to activate after first purchase |
 
----
 
-## 📊 Executive KPI Snapshot
+### 📊 Executive KPI Snapshot
 
 | Metric | Observation | Badge |
 |--------|------------|-------|
@@ -43,9 +41,8 @@ Customer acquisition volume remains stable, yet overall customer quality appears
 | 🚫 One-Time Buyers | Dominant behavior pattern | ![One Time](https://img.shields.io/badge/One--Time%20Buyers-82%25-red) |
 | 🏆 High-Value Customers | Small minority | ![Platinum](https://img.shields.io/badge/Platinum%20Share-~12%25-lightgrey) |
 
----
 
-## 🎯 Final Diagnosis
+### 🎯 Final Diagnosis
 
 Customer quality decline is **not caused by acquisition channel performance**.
 
@@ -53,9 +50,8 @@ The primary failure occurs **after acquisition**, where customers increasingly f
 
 **Root Cause:** Early lifecycle activation breakdown.
 
----
 
-## 💼 Business Implication
+### 💼 Business Implication
 
 Optimizing marketing spend alone will not reverse performance decline.
 
@@ -67,34 +63,31 @@ Impact is more likely achieved through:
 
 ---
 
-## Overview
+# Problem Statement
 
-This project investigates **customer acquisition effectiveness** and **cohort quality deterioration** for an ecommerce business using the Google Analytics 4 (GA4) public BigQuery dataset.
+Ecommerce companies frequently face a common challenge:
 
-Rather than relying on revenue (obfuscated in GA4 sample data), this analysis applies a **behavioral definition of customer value**, replicating how product analytics teams diagnose acquisition performance under **imperfect real-world data constraints**.
-
-**Objective:** Answer three acquisition-stage business questions:
-
-1. Which acquisition channels bring **high-value customers**?  
-2. How do **customer characteristics evolve over time**?  
-3. Why are **newer customer cohorts deteriorating** despite stable acquisition strategy?  
-
----
-
-## Business Context
-
-Ecommerce companies frequently observe:
-
-- Increasing customer acquisition volume  
-- Stable marketing strategy  
-- Declining customer quality  
+- Customer acquisition volume is increasing  
+- Marketing strategy remains stable  
+- Customer quality is declining  
 
 This creates a critical ambiguity:
 
 > Is acquisition failing, or are customers failing to **activate after acquisition**?
 
-This project demonstrates a structured analytical workflow to **isolate the true driver**.
+This project investigates **customer acquisition effectiveness** and the **deterioration of cohort quality** using the Google Analytics 4 (GA4) public BigQuery dataset.  
 
+Because revenue is obfuscated in the GA4 sample data, customer value is assessed using a **behavioral definition**, focusing on engagement and purchase patterns.  
+
+**###Objective:** Investigate and address the common problem of **deteriorating cohort quality**, by understanding behavioral and engagement patterns that drive customer value post-acquisition.  
+
+The analysis follows a **sequential diagnostic approach**:
+
+1. Evaluate acquisition channel quality  
+2. Examine cohort behavior over time  
+3. Diagnose lifecycle mechanisms driving deterioration  
+
+This workflow demonstrates how structured analytics can **isolate the true driver** of declining customer quality.
 ---
 
 ## Dataset
@@ -167,6 +160,7 @@ Because revenue is obfuscated, customer value is defined using **engagement and 
 - Exhibit higher order frequency  
 
 ---
+---
 
 ## Analysis 1 — Acquisition Channel Quality
 
@@ -216,6 +210,7 @@ The quality of customers is broadly similar across all channels, with minor beha
 
 **Hypothesis Status:** ❌ Acquisition channels are NOT the primary driver.
 ---
+---
 
 ## Analysis 2 — Cohort Evolution
 
@@ -253,6 +248,7 @@ Customer quality **degraded progressively** after acquisition.
 
 **Hypothesis Status:** ✅ Customer behavior worsens across newer cohorts.
 ---
+---
 
 ## Analysis 3 — Cohort Deterioration Diagnosis
 
@@ -289,6 +285,7 @@ The business problem is **not acquisition efficiency** — it is an **early life
 Acquisition Quality → Cohort Evolution → Lifecycle Diagnosis → `[ ROOT CAUSE IDENTIFIED ]`
 
 **Root Cause Identified:** Early lifecycle activation failure.
+---
 ---
 
 ## Key Takeaways
