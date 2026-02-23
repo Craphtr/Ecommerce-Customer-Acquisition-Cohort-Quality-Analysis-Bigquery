@@ -254,7 +254,7 @@ Customers were grouped by **first purchase month** to observe behavioral evoluti
 These metrics evaluate whether customer engagement depth and value composition change across acquisition cohorts over time.
 
 ### **Visualization:**  
-![Analysis 2 - Cohort Evolution](./visuals/Cohort_Evolution.png)
+![Analysis 2 - Cohort Evolution](./visuals/02_Cohort_Evolution.png)
 
 ### **Key Findings**  
 - Customer volume expanded from November to December before declining in January, indicating mid-period acquisition scaling.
