@@ -169,12 +169,15 @@ Customers are considered high-value if they:
 
 ### 🧭 Investigation Progress
 
-`[ STEP 1: Acquisition Quality ] → Cohort Evolution → Lifecycle Diagnosis → Root Cause`
+`[ ANALYSIS STEP 1: Acquisition Quality ] → Cohort Evolution → Lifecycle Diagnosis → Root Cause`
 
 Customer quality is declining despite stable acquisition strategy.
-**First Hypothesis:** Some acquisition channels may be brining lower quality customers. If true, reallocating marketing spend could solve performance decline.
+
+### **First Working Hypothesis:** Some acquisition channels may be bringing lower quality customers. 
+If true, reallocating marketing spend could solve performance decline.
 
 --- 
+Customers were evaluated using repeat behavior and value-tier distribution across channels.
 
  ### 📊 **Acquisition Quality KPI Summary**
 
@@ -186,6 +189,9 @@ Customer quality is declining despite stable acquisition strategy.
 | 🏆 Platinum Customers | 10–13% | ![Platinum](https://img.shields.io/badge/Platinum%20Share-~12%25-lightgrey) |
 | 👥 Customers Acquired | 4,066 | ![Customers](https://img.shields.io/badge/Customers-4066-purple) | 
 
+### **Visualization:**  
+![Analysis 1 - Acquisition Channel Quality](./visuals/01_Channel_Quality_trend.png)
+
 ### Key Results — Acquisition Channel Quality
 
 | Channel Group | Customers | Avg Orders | Repeat Rate | Platinum % | Gold % | One-Time Buyers % |
@@ -196,60 +202,88 @@ Customer quality is declining despite stable acquisition strategy.
 | Other / Unknown | 925 | 1.30 | 0.16 | 10% | 18% | 84% |
 | Search (Paid/Organic) | 1214 | 1.25 | 0.16 | 9% | 21% | 84% |
 
-### **Key Insights***
+### **Key Findings**
 
 - Engagement depth is uniformly shallow across channels.
-- Repeat purchasing remains consistently low.
+- Repeat purchase rates cluster tightly between 16 and 20%.
 - Approximately 80% of customers purchase only once, regardless of acquisition source.
 - Channel differences exist but are marginal relative to overall behavioral patterns.
 
-### **Decision Interpretation:**  
-The quality of customers is broadly similar across all channels, with minor behavioral advantages in Internal and Direct traffic. However, across all channels, approximately 80% of customers purchase only once, indicating that retention—not acquisition mix—is the primary performance constraint. Strategic focus should shift toward post-purchase engagement rather than channel reallocation.
+### **Interim Insight**
+Customer behavior converges toward the same outcome independent of acquisition source.
 
-### **Visualization:**  
-![Analysis 1 - Acquisition Channel Quality](./visuals/01_Channel_Quality_trend.png)
-
+This indicates the business is successfully acquiring customers but struggling to retain them.
+The performance constraint appears post-acquisition, not in marketing mix.
 
 ### **Hypothesis Status:** ❌ Acquisition channels are NOT the primary driver of declining Customer Quality.
 
----
+### **Decision - Next Hypothesis:**  
+If acquisition quality is stable, cohort deterioration must occur after customers enter the lifecycle.
 
-## Analysis 2 — Cohort Evolution
-
----
-
-## 🧭 Investigation Progress
-
-**Customer Quality Decline Investigation**
-
-Acquisition Quality → `[ STEP 2: Cohort Evolution ]` → Lifecycle Diagnosis → Root Cause
-
-**Current Objective:** Determine whether customer behavior changes across acquisition cohorts over time.
+Next Step: Analyze how customer cohorts evolve over time.
 
 ---
-Customers were grouped by **first purchase month**.
 
-**Metrics Examined:**
+# Analysis Step 2 — Cohort Evolution
 
-- Repeat purchase rate  
-- Average order frequency  
-- Value tier migration  
-- Acquisition mix stability  
+---
 
-**Finding:**  
-Later cohorts demonstrated:
+### 🧭 Investigation Progress
 
-- Higher one-time buyer share  
-- Lower repeat behavior  
-- Reduced engagement depth  
+Acquisition Quality → `[ ANALYSIS STEP 2: Cohort Evolution ]` → Lifecycle Diagnosis → Root Cause
+Acquisition channels were found not to explain declining customer quality.
+This step evaluates whether behavioral quality changes across customer cohorts over time.
 
-Customer quality **degraded progressively** after acquisition.
+### **Second Working Hypothesis:** Customer behavior deteriorates across newer acquisition cohorts.
 
-**Visualization:**  
+If true, the decline originates after acquisition and indicates structural changes in customer engagement.
+
+---
+Customers were grouped by **first purchase month** to observe behavioral evolution.
+
+### 📊 Cohort Evolution KPI Summary
+
+| KPI | Value | Badge |
+|-----|-------|-------|
+| 🔄 Repeat Purchase Rate | 16% | ![Repeat Rate](https://img.shields.io/badge/Repeat%20Rate-16%25-green) |
+| 📊 Avg Orders per Customer | 1.26 | ![Avg Orders](https://img.shields.io/badge/Avg%20Orders-1.26-blue) |
+| 🚫 One-Time Buyers | 84% | ![One Time Buyers](https://img.shields.io/badge/One--Time%20Buyers-84%25-red) |
+| 🏆 High-Value Tier Share (Platinum + Gold) | ~31% | ![High Value Share](https://img.shields.io/badge/High--Value%20Customers-31%25-lightgrey) |
+| 📡 Acquisition Mix Stability | Stable | ![Channel Mix](https://img.shields.io/badge/Channel%20Mix-Stable-purple) |
+
+These metrics evaluate whether customer engagement depth and value composition change across acquisition cohorts over time.
+
+### **Visualization:**  
 ![Analysis 2 - Cohort Evolution](./visualizations/cohort_evolution.png)
 
-**Hypothesis Status:** ✅ Customer behavior worsens across newer cohorts.
----
+### **Key Findings**  
+- Customer volume expanded from November to December before declining in January, indicating mid-period acquisition scaling.
+- Behavioral depth weakened progressively across cohorts:
+  - repeat purchase rate declined,
+  - average orders decreased,
+  - one-time buyers increased.
+- High-value customers (Platinum + Gold) shrank while lower-value tiers expanded, indicating structural quality deterioration rather than random variation.
+- Acquisition channel mix remained stable across cohorts, confirming deterioration is not marketing-channel driven.
+
+### **Interim Insight**
+Earlier cohorts demonstrated stronger engagement and value concentration, establishing a baseline of efficient acquisition.
+As acquisition scaled, customer depth declined — suggesting growth shifted from quality-driven acquisition toward volume expansion.
+
+This pattern signals acquisition dilution, where newer customers enter the lifecycle with weaker long-term engagement potential.
+
+### **Economic Implication**
+If this trajectory continues:
+- Future customer lifetime value (LTV) will compress.
+- Growth may appear healthy through rising customer counts while retention weakens underneath.
+- Revenue expansion risks masking deteriorating unit economics and rising churn exposure.
+
+### **Hypothesis Status:** ✅ Customer behavior worsens across newer cohorts.
+
+### **Decision - Next Hypothesis
+Since deterioration occurs after acquisition and progressively across time, the next step is to identify where in the customer lifecycle engagement breaks down.
+
+Next Step: Diagnose lifecycle-stage friction driving retention collapse.
+
 ---
 
 ## Analysis 3 — Cohort Deterioration Diagnosis
@@ -260,7 +294,7 @@ Customer quality **degraded progressively** after acquisition.
 
 **Customer Quality Decline Investigation**
 
-Acquisition Quality → Cohort Evolution → `[ STEP 3: Lifecycle Diagnosis ]` → Root Cause
+Acquisition Quality → Cohort Evolution → `[ ANALYSIS STEP 3: Lifecycle Diagnosis ]` → Root Cause
 
 **Current Objective:** Identify the behavioral mechanism causing cohort deterioration.
 
