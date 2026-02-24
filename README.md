@@ -28,3 +28,10 @@ Customer quality decline is not an acquisition problem. It is an activation cris
 In this simulated scenario, the 40% acquisition increase should be conditionally declined pending resolution of early-lifecycle retention failure.
 
 #### **Key Findings at a Glance**
+
+| Metric                                            | Simulated Finding           | Risk Level  | Strategic Implication                        |
+| ------------------------------------------------- | --------------------------- | ----------- | -------------------------------------------- |
+| **Activation Rate** (2nd purchase within 30 days) | 16% (down from 73%)         | 🔴 Critical | 84% of customers never generate repeat value |
+| **Cohort Quality Trend**                          | Declining 34% per month     | 🔴 Critical | Newer customers structurally less valuable   |
+| **Channel Performance**                           | Uniformly poor              | 🟡 Moderate | No "good" channel to reallocate toward       |
+| **High-Value Customer Concentration**             | 8% Platinum (down from 24%) | 🔴 Critical | Revenue concentration in shrinking base      |
