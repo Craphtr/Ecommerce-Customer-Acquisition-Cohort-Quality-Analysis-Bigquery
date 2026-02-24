@@ -173,7 +173,8 @@ Customers are considered high-value if they:
 
 Customer quality is declining despite stable acquisition strategy.
 
-### **First Working Hypothesis:** Some acquisition channels may be bringing lower quality customers. 
+### **First Working Hypothesis:** 
+#### Some acquisition channels may be bringing lower quality customers. 
 If true, reallocating marketing spend could solve performance decline.
 
 --- 
