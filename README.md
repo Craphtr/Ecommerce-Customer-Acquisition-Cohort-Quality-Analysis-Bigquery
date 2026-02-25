@@ -29,7 +29,6 @@ Revenue values are obfuscated in the GA4 dataset, requiring behavioral proxy met
 
 ### 🔍 **Diagnostic Methodology**
 I designed a three-phase forensic analysis to isolate the failure point in the customer journey. Each phase tested a specific hypothesis using repeatable, production-grade SQL pipelines.
-plain
 
 **PHASE 1: Acquisition Quality Audit**
 
@@ -46,12 +45,13 @@ plain
 
 ### **Executive KPI Snapshot**
 
-| Metric                                            | Finding           | Risk Level  | Strategic Implication                        |
-| ------------------------------------------------- | --------------------------- | ----------- | -------------------------------------------- |
-| **Activation Rate** (2nd purchase within 30 days) | 16% (down from 73%)         | 🔴 Critical | 84% of customers never generate repeat value |
-| **Cohort Quality Trend**                          | Declining 34% per month     | 🔴 Critical | Newer customers structurally less valuable   |
-| **Channel Performance**                           | Uniformly poor              | 🟡 Moderate | No "good" channel to reallocate toward       |
-| **High-Value Customer Concentration**             | 8% Platinum (down from 24%) | 🔴 Critical | Revenue concentration in shrinking base      |
+| Metric                      | Finding                    | Risk Level  | Strategic Implication                             |
+| --------------------------- | ------------------------------------ | ----------- | ------------------------------------------------- |
+| 🚫**One-Time Buyer Rate**     | 82% across all channels              | 🔴 Critical | Majority of customers never generate repeat value |
+| 🔄**Repeat Purchase Rate**    | 29% → 6% across cohorts              | 🔴 Critical | Newer customers 79% less likely to return         |
+| 🏆**Platinum Customer Share** | 24% → 8%                             | 🔴 Critical | High-value concentration collapsing               |
+| ⏱**Activation Speed**        | 3.9 days → 1.5 days (motivated only) | 🟡 Warning  | Only highly motivated customers activating        |
+
 
 ### **Final Diagnosis**
 Customer quality decline is not an acquisition problem. The primary failure occurs **after acquisition**, where customers increasingly fail to transition beyond their first purchase. In this business scenario, the 40% acquisition increase should be conditionally declined pending resolution of early-lifecycle retention failure.
