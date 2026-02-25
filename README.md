@@ -57,11 +57,11 @@ plain
 Customer quality decline is not an acquisition problem. The primary failure occurs **after acquisition**, where customers increasingly fail to transition beyond their first purchase. In this business scenario, the 40% acquisition increase should be conditionally declined pending resolution of early-lifecycle retention failure.
 
 ### **Recommendation**
-**Immediate:** Halt acquisition scaling. Deploy retention/activation experiments before increasing top-of-funnel spend.
+- **Immediate:** Halt acquisition scaling. Deploy retention/activation experiments before increasing top-of-funnel spend.
 
-**90-Day:** Implement activation-based campaign optimization.
+- **90-Day:** Implement activation-based campaign optimization.
 
-**Ongoing:** Shift KPIs from "customers acquired" to "activations achieved."
+- **Ongoing:** Shift KPIs from "customers acquired" to "activations achieved."
 
 ---
 
