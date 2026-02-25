@@ -1,87 +1,79 @@
 # 🟠Simulated Consulting Engagement: Ecommerce Cohort Quality Diagnostic
-TechCraphters Strategic Analytics | Portfolio Case Study
+TechCraphters Strategic Analytics 
+
+#### **Addressing the common problem of deteriorating Cohort Quality faced by Ecommerce Companies**
+
 
 ## 📋 Engagement Simulation Context
 #### **Scenario:** Fortune 500 Ecommerce Retailer
 #### **Role:** Lead Analytics Consultant (Simulated)
 #### **Duration:** 6 weeks
-#### Stakeholder:** Chief Marketing Officer & VP of Customer Retention
+#### **Stakeholder:** Chief Marketing Officer & VP of Customer Retention
 
-# **Business Situation (Simulated)**
+# **Business Scenario**
 This case study simulates a strategic diagnostic engagement using the Google Analytics 4 public dataset. The business context, stakeholder dynamics, and strategic stakes are modeled on typical enterprise engagements I have observed or participated in, while all data and specific outcomes are derived from public sources.
 
-#### **Mandate:**
+### **Mandate:**
 A client's acquisition volume has grown 34% YoY, yet quarterly revenue growth lags at 12%. The CMO must decide whether to approve a 40% increase in Q2 acquisition spend. My objective is to determine whether declining performance stems from acquisition source degradation or post-acquisition activation failure.
 
-#### **Analytical Constraint:**
+### **Analytical Constraint:**
 Revenue values are obfuscated in the GA4 dataset, requiring behavioral proxy methodology—a common real-world scenario where financial data resides in separate systems or requires legal clearance.
 
->#### **Consulting Approach:**
+>### **Consulting Approach:**
 >I deliberately chose this constraint to demonstrate how I operate when perfect data is unavailable. In actual engagements, I frequently architect analytics strategies across data silos, using behavioral inference when revenue data is inaccessible. This simulation showcases that capability.
 
+---
 # 🎯 Executive Summary
-#### **The Board Question**
+### **The Board Question**
 "We're acquiring more customers than ever. Why isn't revenue accelerating?"
 
-#### **Diagnostic Conclusion**
-Customer quality decline is not an acquisition problem. It is an activation crisis.
-In this simulated scenario, the 40% acquisition increase should be conditionally declined pending resolution of early-lifecycle retention failure.
+### 🔍 **Diagnostic Methodology**
+I designed a three-phase forensic analysis to isolate the failure point in the customer journey. Each phase tested a specific hypothesis using repeatable, production-grade SQL pipelines.
+plain
 
-#### **Key Findings at a Glance**
+**PHASE 1: Acquisition Quality Audit**
 
-| Metric                                            | Simulated Finding           | Risk Level  | Strategic Implication                        |
+    ⬇️ Ruled out: Channel-driven degradation
+
+**PHASE 2: Cohort Evolution Analysis**  
+
+    ⬇️ Confirmed: Temporal quality deterioration
+
+**PHASE 3: Lifecycle Mechanism Diagnosis**
+
+    ✅ Isolated: Early activation failure as root cause
+
+
+### **Executive KPI Snapshot**
+
+| Metric                                            | Finding           | Risk Level  | Strategic Implication                        |
 | ------------------------------------------------- | --------------------------- | ----------- | -------------------------------------------- |
 | **Activation Rate** (2nd purchase within 30 days) | 16% (down from 73%)         | 🔴 Critical | 84% of customers never generate repeat value |
 | **Cohort Quality Trend**                          | Declining 34% per month     | 🔴 Critical | Newer customers structurally less valuable   |
 | **Channel Performance**                           | Uniformly poor              | 🟡 Moderate | No "good" channel to reallocate toward       |
 | **High-Value Customer Concentration**             | 8% Platinum (down from 24%) | 🔴 Critical | Revenue concentration in shrinking base      |
 
-#### **Recommendation**
+### **Final Diagnosis**
+Customer quality decline is not an acquisition problem. The primary failure occurs **after acquisition**, where customers increasingly fail to transition beyond their first purchase. In this business scenario, the 40% acquisition increase should be conditionally declined pending resolution of early-lifecycle retention failure.
+
+### **Recommendation**
 **Immediate:** Halt acquisition scaling. Deploy retention/activation experiments before increasing top-of-funnel spend.
 
 **90-Day:** Implement activation-based campaign optimization.
+
 **Ongoing:** Shift KPIs from "customers acquired" to "activations achieved."
 
-#### 🔍 **Diagnostic Methodology**
-I designed a three-phase forensic analysis to isolate the failure point in the customer journey. Each phase tested a specific hypothesis using repeatable, production-grade SQL pipelines.
-plain
-
-PHASE 1: Acquisition Quality Audit
-    ⬇️ Ruled out: Channel-driven degradation
-PHASE 2: Cohort Evolution Analysis  
-    ⬇️ Confirmed: Temporal quality deterioration
-PHASE 3: Lifecycle Mechanism Diagnosis
-    ⬇️ Isolated: Early activation failure as root cause
+---
 
 #### **Technical Architecture**
 **Data Stack:** BigQuery (transformation) → Python (visualization)
 
 **Source:** Google Analytics 4 Obfuscated Ecommerce Dataset (BigQuery Public Data)
 
-**Modular SQL Pipeline:** Three-tier architecture ensuring reproducibility
-repository/
-├── sql/
-│   ├── 01_Customer360_RawAgg.sql          # Identity resolution & feature engineering
-│   ├── 02_Customer360_Master.sql
-│   ├── 03_high_value_channels.sql         # Acquisition quality by channel
-│   ├── 04_cohort_evolution.sql            # Cohort-based metric computation
-│   └── 05_Cohort_deterioration.sql        # Root-cause statistical testing
-├── visuals/                               # Publication-ready charts
-│   ├── 01_Channel_Quality_trend.png       # Acquisition quality by channel
-│   ├── 02_Cohort_Evolution.png            # Cohort degradation by time
-│   ├── 03_repeat_purchase_rate_vs_pct_one_time_buyers.png
-│   └── 04_Activation_Speed_and_Coverage_Chart.png
-├── results/
-│   ├── 01_customer360_rawaggregate_table.csv
-│   ├── 02_customer360_master_table.csv
-│   ├── 03_high_value_channel_results.csv
-│   ├── 04_cohort_evolution_results.csv
-│   └── 05_cohort_deterioration_results.csv
-├── docs/
-│   └── methodology.md                     # Full metric definitions & assumptions
-└── README.md                              # Executive summary (this document)
 
 **Technical Note:** All SQL code used production-grade patterns: modular CTEs, incremental logic, and extensible schema design. This architecture mirrors how I structure client engagements for scalability.
+
+---
 
 # 📊 **Phase 1: Acquisition Quality Audit**
 
