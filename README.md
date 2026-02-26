@@ -253,20 +253,25 @@ From: Acquisition-volume optimization
 To: Activation-efficiency optimization
 
 ---
+### 🧠 **Methodology & Technical Notes**
+#### **Value Tier Segmentation**
 
-### **🧠 Methodology & Technical Notes**
-Behavioral Value Proxy Framework
+Customer value tiers were created using **relative revenue ranking** from the GA4 ecommerce sample dataset.
 
-Due to revenue obfuscation, I developed a behavioral LTV prediction model:
+Because revenue values are obfuscated, tiers represent **relative customer value within the dataset**, not real monetary amounts.
 
-| Tier         | Behavioral Criteria               | Predictive Rationale                          |
-| ------------ | --------------------------------- | --------------------------------------------- |
-| **Platinum** | ≥3 orders OR 2nd purchase ≤7 days | Highest correlation with long-term engagement |
-| **Gold**     | 2 orders, 2nd purchase 8-30 days  | Moderate activation, stable retention         |
-| **Silver**   | 2 orders, 2nd purchase >30 days   | Delayed activation, churn risk                |
-| **Bronze**   | 1 order only                      | No activation, minimal LTV                    |
+| Tier | Definition | Interpretation |
+|------|------------|----------------|
+| **Platinum** | Highest cumulative revenue customers | Strong activation & repeat purchasing |
+| **Gold** | Upper-mid revenue customers | Stable repeat behavior |
+| **Silver** | Lower-mid revenue customers | Partial activation |
+| **Bronze** | Lowest revenue customers | Mostly one-time buyers |
 
-### Metric Definition Consistency###
+**Note:** Revenue is used only for **relative ranking**. 
+
+Behavioral metrics (repeat rate, orders, time to 2nd purchase) are analyzed separately to diagnose lifecycle performance.
+
+### **Metric Definition Consistency**
 - **Phase 1 (Channel Analysis):** Full observation period, customer-level averages
 - **Phase 2-3 (Cohort Analysis):** Cohort-specific (month of first purchase)
 
@@ -303,3 +308,20 @@ git clone https://github.com/Craphtr/why-are-customer-cohorts-declining-despite-
 ---
 
 *This is a simulated consulting case study built using the Google Analytics 4 public dataset. The engagement scenario, stakeholder context, and business stakes are representative of enterprise analytics challenges, while all data and results are derived from publicly available sources. This format demonstrates my consulting methodology and strategic communication capabilities without claiming specific client engagements.*
+
+
+
+
+
+
+## **The Diagnostic Chain: From Symptom to Root Cause**
+
+| Phase | Question | Finding | Conclusion |
+|:-----:|:---------|:--------|:-----------|
+| **1** | **WHERE?**<br>Channel Audit | All channels show<br>uniform 82% one-time<br>buyer rates | ❌ **RULING OUT:**<br>Acquisition source |
+| **↓** | | | |
+| **2** | **WHEN?**<br>Cohort Analysis | Quality degrades over<br>time, independent of<br>channel mix | ❌ **RULING OUT:**<br>Market/external factors |
+| **↓** | | | |
+| **3** | **WHAT?**<br>Mechanism Isolation | Breakpoint: Day 0-30<br>post-purchase.<br>94% never activate | ✅ **ISOLATING:**<br>Activation failure |
+
+**Logic:** Channels stable → Cohorts degrade → Break at Day 0-30 → **Root cause: Activation infrastructure**
