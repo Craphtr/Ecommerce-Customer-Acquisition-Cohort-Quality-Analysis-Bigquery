@@ -237,8 +237,10 @@ Phase 3: ACTIVATION FAILURE identified as breakpoint
 #### **Phase 3 Conclusion**
 #### **✅ Root cause isolated - Early-lifecycle activation failure is the primary driver**
 
-💼 Strategic Recommendations
-Immediate Actions (0-30 Days)
+---
+
+# 💼 **Strategic Recommendations**
+- ### **Immediate Actions (0-30 Days)**
 
 | Initiative                      | Owner               | Investment | Success Metric          |
 | ------------------------------- | ------------------- | ---------- | ----------------------- |
@@ -246,7 +248,7 @@ Immediate Actions (0-30 Days)
 | **Post-Purchase Journey Audit** | Product/UX          | 40 hrs     | Journey map completed   |
 | **KPI Migration**               | Analytics           | 20 hrs     | Board reporting updated |
 
-90-Day Strategic Shift
+- ### **90-Day Strategic Shift**
 From: Acquisition-volume optimization
 To: Activation-efficiency optimization
 
@@ -277,8 +279,8 @@ This methodological distinction explains metric variations between phases.
 1. Clone the repository:  
 
 ```bash
-git clone https://github.com/Craphtr/Ecommerce-Customer-Acquisition-Cohort-Quality-Analysis-Bigquery.git
-
+git clone https://github.com/Craphtr/why-are-customer-cohorts-declining-despite-stable-acquisition--a-lifecycle-diagnostic-using-GA4-data.git
+```
 2. Open BigQuery and link the GA4 sample dataset.
 
 3. Run the SQL scripts in sql/ folder to create customer360 layer and cohort tables.
