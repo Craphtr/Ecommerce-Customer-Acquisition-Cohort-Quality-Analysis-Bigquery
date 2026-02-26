@@ -292,12 +292,14 @@ git clone https://github.com/Craphtr/why-are-customer-cohorts-declining-despite-
 ---
 
 ### 📬 **Contact**
-TechCraphters Strategic Analytics
+#### **TechCraphters Strategic Analytics**
 
-Consultant: Jubril Davies
+**Consultant:** Jubril Davies
 
-Portfolio Inquiries: [jubril.davies@techcraphters.com]
+**Portfolio Inquiries:** [jubril.davies@techcraphters.com]
 
-LinkedIn: [linkedin.com/in/jubrildavies]
+**LinkedIn:** [linkedin.com/in/jubrildavies]
 
-This is a simulated consulting case study built using the Google Analytics 4 public dataset. The engagement scenario, stakeholder context, and business stakes are representative of enterprise analytics challenges, while all data and results are derived from publicly available sources. This format demonstrates my consulting methodology and strategic communication capabilities without claiming specific client engagements.
+---
+
+*This is a simulated consulting case study built using the Google Analytics 4 public dataset. The engagement scenario, stakeholder context, and business stakes are representative of enterprise analytics challenges, while all data and results are derived from publicly available sources. This format demonstrates my consulting methodology and strategic communication capabilities without claiming specific client engagements.*
